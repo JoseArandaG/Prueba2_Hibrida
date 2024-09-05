@@ -1,0 +1,22 @@
+.cita-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .cita-frase {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00BFFF; /* Azul claro */
+    margin-bottom: 10px;
+  }
+  
+  .cita-autor {
+    font-size: 1em;
+    color: gray; /* Gris */
+    align-self: flex-end;
+  }
+  

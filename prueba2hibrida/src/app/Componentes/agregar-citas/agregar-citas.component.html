@@ -1,0 +1,34 @@
+<ion-item>
+    <ion-input 
+      [(ngModel)]="frase"
+      required="required"
+      minlength="5"
+      #fraseInput="ngModel" 
+      label="Cita">
+    </ion-input>
+  </ion-item>
+  <ion-item *ngIf="fraseInput.invalid && fraseInput.touched">
+    <ion-label color="danger" *ngIf="fraseInput.errors?.required">La frase es obligatoria.</ion-label>
+    <ion-label color="danger" *ngIf="fraseInput.errors?.minlength">La frase debe tener al menos 5 caracteres.</ion-label>
+  </ion-item>
+  
+  <ion-item>
+    <ion-input 
+      [(ngModel)]="autor" 
+      required="required"
+      minlength="2"
+      #autorInput="ngModel"
+      label="Autor">
+    </ion-input>
+  </ion-item>
+  <ion-item *ngIf="autorInput.invalid && autorInput.touched">
+    <ion-label color="danger" *ngIf="autorInput.errors?.required">El autor es obligatorio.</ion-label>
+    <ion-label color="danger" *ngIf="autorInput.errors?.minlength">El autor debe tener al menos 2 caracteres.</ion-label>
+  </ion-item>
+  
+  <ion-button 
+    [disabled]="!fraseInput.valid || !autorInput.valid"
+    expand="block" 
+    (click)="agregarCita()">Agregar +
+  </ion-button>
+  
